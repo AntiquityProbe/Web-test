@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ArcANE - Archaeology: Accessibility, Networking, Engagement</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <h1>ARCANE</h1>
+  <p>Archaeology: Accessibility, Networking, Engagement</p>
+</header>
+
+<nav role="navigation" aria-label="Primary navigation">
+  <button data-page="home" aria-current="page" tabindex="0">Home</button>
+  <button data-page="blog" tabindex="0">Blog</button>
+  <button data-page="resources" tabindex="0">Resources</button>
+  <button data-page="about" tabindex="0">About</button>
+  <button data-page="contact" tabindex="0">Contact</button>
+</nav>
+
+<main>
+
+  <!-- HOME PAGE -->
+  <section id="home" class="page active" tabindex="0" aria-label="Home page introduction">
+    <h2>Welcome to Arcane</h2>
+    <p>
+      Arcane is an open-access global community project developed by students of archaeology and ancient history for professionals, students, and hobbyists worldwide.
+      Our mission is to create a community-driven resource pool accessible to everyone interested in archaeology.
+    </p>
+  </section>
+
+  <!-- BLOG PAGE -->
+  <section id="blog" class="page" tabindex="0" aria-label="Blog posts section">
+    <h2>Blog</h2>
+    <p>Explore articles categorized into Casual and Academic posts. Use filters and tags to find topics of interest.</p>
+
+    <!-- Blog Filters by Category -->
+    <div class="blog-filters" role="group" aria-label="Blog category filters">
+      <button data-category="all" class="active" aria-pressed="true">All</button>
+      <button data-category="casual" aria-pressed="false">Casual</button>
+      <button data-category="academic" aria-pressed="false">Academic</button>
+    </div>
+
+    <!-- Blog Posts List -->
+    <div class="blog-posts" role="list" aria-live="polite" tabindex="0">
+      <!-- Posts dynamically loaded here by JS -->
+    </div>
+  </section>
+
+  <!-- RESOURCE PAGE -->
+  <section id="resources" class="page" tabindex="0" aria-label="Resource pool section">
+    <h2>Resource Pool</h2>
+    <p>Browse our curated archaeological resources. Filter by Alphabetical, Region, or Section of Study:</p>
+
+    <div class="resource-filters" role="group" aria-label="Resource pool filters">
+      <button data-filter="alphabet" class="active" aria-pressed="true">Alphabetical</button>
+      <button data-filter="region" aria-pressed="false">Region</button>
+      <button data-filter="study" aria-pressed="false">Section of Study</button>
+    </div>
+
+    <ul class="resources-list" aria-live="polite" tabindex="0">
+      <!-- Resources dynamically loaded here by JS -->
+    </ul>
+  </section>
+
+  <!-- ABOUT PAGE -->
+  <section id="about" class="page" tabindex="0" aria-label="About Arcane project">
+    <h2>About Arcane</h2>
+    <p>
+      Arcane is created by passionate students and professionals to make archaeological knowledge and resources accessible globally,
+      fostering networking and community engagement.
+    </p>
+    <p>
+      The project focuses on Accessibility, Networking, and Engagement — building a vibrant community sharing knowledge freely around the world.
+    </p>
+  </section>
+
+  <!-- CONTACT PAGE -->
+  <section id="contact" class="page" tabindex="0" aria-label="Contact Arcane team">
+    <h2>Contact</h2>
+    <p>Have questions, want to contribute, or collaborate?<br>
+      Reach out to us at <a href="mailto:contact@arcane.org">contact@arcane.org</a>.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2024 Arcane Project — Archaeology: Accessibility, Networking, Engagement
+</footer>
+
+<!-- Blog Post Detail Modal -->
+<div id="postDetailOverlay" role="dialog" aria-modal="true" aria-labelledby="postDetailTitle" tabindex="-1">
+  <div id="postDetailContent">
+    <button id="closePostBtn" aria-label="Close blog post details">&times;</button>
+    <h2 id="postDetailTitle"></h2>
+    <p id="postDetailBody"></p>
+    <div id="postDetailTags" class="tags" aria-label="Post tags"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
+
